@@ -13,6 +13,11 @@
 
 set -e
 
+if [ "$DEVCONTAINER_BUILD" != "true" ]; then
+  echo "== [Custom Ink] missing DEVCONTAINER_BUILD=true environment variable. Skipping! =="
+  exit
+fi
+
 echo "== [Custom Ink] installing 'common-amzn' features ... =="
 
 INSTALL_ZSH=${1:-"true"}
@@ -30,6 +35,7 @@ if [ "$(id -u)" -ne 0 ]; then
     exit 1
 fi
 
+# Important first. If in a "feature" needs to be in Dockerfile.
 yum -y install which
 
 # Ensure that login shells get the correct path if the user updated the PATH using ENV.
@@ -149,9 +155,6 @@ if [ "${LOCALE_ALREADY_SET}" != "true" ] && ! grep -o -E '^\s*en_US.UTF-8' /etc/
     LOCALE_ALREADY_SET="true"
 fi
 
-# Create a ssh group. 
-/usr/sbin/groupadd ssh
-
 # Create or update a non-root user to match UID/GID.
 group_name="${USERNAME}"
 if id -u ${USERNAME} > /dev/null 2>&1; then
@@ -177,6 +180,9 @@ else
         /usr/sbin/useradd -s /bin/bash --uid $USER_UID --gid $USERNAME -m $USERNAME
     fi
 fi
+
+# Create a ssh group. 
+/usr/sbin/groupadd ssh
 
 # Simulate `dnf`` for `/workspaces/.codespaces/.persistedshare/installSSH.sh` to work.
 ln -s /usr/bin/yum /usr/bin/dnf

@@ -4,6 +4,7 @@ set -e
 
 echo "== Running common-amzn.sh =="
 
+export DEVCONTAINER_BUILD=true
 ./common-amzn.sh > /dev/null 2>&1
 
 echo "== Testing common-amzn =="
@@ -29,8 +30,8 @@ assert "zsh --version | cut -d \" \" -f 1" \
 assert "dnf -h | grep \"Usage: yum\" | cut -d \" \" -f 2" \
        "yum"
 
-assert "cat /etc/group | grep 'ssh:'" \
-       "ssh:x:1000:root"
+assert "cat /etc/group | grep 'ssh:x' | cut -b 1-5" \
+       "ssh:x"
 
 echo "== Testing complete! =="
 
