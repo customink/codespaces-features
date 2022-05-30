@@ -1,0 +1,13 @@
+#!/bin/sh
+set -e
+
+docker run \
+  --volume "${PWD}:/var/task" \
+  --workdir="/var/task" \
+  --rm \
+  --init \
+  --privileged \
+  --interactive \
+  --tty \
+  --entrypoint "/bin/bash" \
+  "${1}"

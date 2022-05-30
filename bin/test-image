@@ -1,0 +1,11 @@
+#!/bin/sh
+set -e
+
+docker run \
+  --volume "${PWD}:/var/task" \
+  --workdir="/var/task" \
+  --rm \
+  --init \
+  --privileged \
+  --entrypoint "test/${1}" \
+  "${2}"

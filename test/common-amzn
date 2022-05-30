@@ -1,0 +1,28 @@
+#!/bin/bash
+set -e
+. ./bin/assert.sh
+
+echo "== Running common-amzn.sh =="
+
+./common-amzn.sh > /dev/null 2>&1
+
+echo "== Testing common-amzn =="
+
+assert "sudo -h | grep 'another user'" \
+       "sudo - execute a command as another user"
+
+assert "git --version | cut -d \" \" -f 1-2" \
+       "git version"
+
+assert "echo $LANG" \
+       "en_US.UTF-8"
+
+assert "cat /etc/passwd | grep vscode" \
+       "vscode:x:1000:1000::/home/vscode:/bin/bash"
+
+assert "zsh --version | cut -d \" \" -f 1" \
+       "zsh"
+
+echo "== Testing complete! =="
+
+assert_end examples

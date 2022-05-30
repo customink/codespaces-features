@@ -1,0 +1,14 @@
+name: Test
+on: [push]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Test
+        env:
+          GITHUB_TOKEN: ${{ secrets.CII_GITHUB_DEPLOYMENT_TOKEN }}
+          CI_SSH_KEY: ${{ secrets.CII_GITHUB_SSH_KEY }}
+        run: |
+          ./bin/test
