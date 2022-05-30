@@ -30,6 +30,8 @@ if [ "$(id -u)" -ne 0 ]; then
     exit 1
 fi
 
+yum -y install which
+
 # Ensure that login shells get the correct path if the user updated the PATH using ENV.
 rm -f /etc/profile.d/00-restore-env.sh
 echo "export PATH=${PATH//$(sh -lc 'echo $PATH')/\$PATH}" > /etc/profile.d/00-restore-env.sh
@@ -146,6 +148,9 @@ if [ "${LOCALE_ALREADY_SET}" != "true" ] && ! grep -o -E '^\s*en_US.UTF-8' /etc/
     echo "LANG=\"en_US.UTF-8\"" >> /etc/environment
     LOCALE_ALREADY_SET="true"
 fi
+
+# Create a ssh group. 
+/usr/sbin/groupadd ssh
 
 # Create or update a non-root user to match UID/GID.
 group_name="${USERNAME}"

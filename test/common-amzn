@@ -8,6 +8,9 @@ echo "== Running common-amzn.sh =="
 
 echo "== Testing common-amzn =="
 
+assert "which --version | grep Copyright | cut -d \" \" -f 1-2" \
+       "GNU which"
+
 assert "sudo -h | grep 'another user'" \
        "sudo - execute a command as another user"
 
@@ -25,6 +28,9 @@ assert "zsh --version | cut -d \" \" -f 1" \
 
 assert "dnf -h | grep \"Usage: yum\" | cut -d \" \" -f 2" \
        "yum"
+
+assert "cat /etc/group | grep 'ssh:'" \
+       "ssh:x:1000:root"
 
 echo "== Testing complete! =="
 
