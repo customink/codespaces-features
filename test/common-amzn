@@ -23,6 +23,9 @@ assert "cat /etc/passwd | grep vscode" \
 assert "zsh --version | cut -d \" \" -f 1" \
        "zsh"
 
+assert "dnf -h | grep \"Usage: yum\" | cut -d \" \" -f 2" \
+       "yum"
+
 echo "== Testing complete! =="
 
 assert_end examples

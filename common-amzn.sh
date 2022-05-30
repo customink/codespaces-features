@@ -13,6 +13,8 @@
 
 set -e
 
+echo "== [Custom Ink] installing 'common-amzn' features ... =="
+
 INSTALL_ZSH=${1:-"true"}
 USERNAME=${2:-"automatic"}
 USER_UID=${3:-"automatic"}
@@ -170,6 +172,9 @@ else
         /usr/sbin/useradd -s /bin/bash --uid $USER_UID --gid $USERNAME -m $USERNAME
     fi
 fi
+
+# Simulate `dnf`` for `/workspaces/.codespaces/.persistedshare/installSSH.sh` to work.
+ln -s /usr/bin/yum /usr/bin/dnf
 
 # Add add sudo support for non-root user
 if [ "${USERNAME}" != "root" ] && [ "${EXISTING_NON_ROOT_USER}" != "${USERNAME}" ]; then
