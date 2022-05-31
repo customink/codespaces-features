@@ -4,7 +4,7 @@
 
 ⚠️ Eventually, all of these scripts will be used via the Codespaces' [container-features](https://github.com/microsoft/vscode-dev-containers/blob/main/script-library/container-features/README.md). Currently the features spec is under discussion here https://github.com/devcontainers/spec/issues/8 and till it is resolved, please download and execute each script using Codespaces' [lifecycle](https://code.visualstudio.com/docs/remote/devcontainerjson-reference#_lifecycle-scripts) hooks.
 
-## Feature Usage
+## Features & Usage
 
 #### `common-amzn` - Common for Amazon Linux 2
 
