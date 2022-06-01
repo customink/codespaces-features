@@ -13,8 +13,12 @@
 
 set -e
 
-if [ "$DEVCONTAINER_BUILD" != "true" ]; then
-  echo "== [Custom Ink] missing DEVCONTAINER_BUILD=true environment variable. Skipping! =="
+INSTALL=false
+if [ "$CODESPACES" = "true" ] || [ "$REMOTE_CONTAINERS" = "true" ]; then
+  INSTALL=true
+fi
+if [ "$INSTALL" != "true" ]; then
+  echo "== [Custom Ink] missing CODESPACES=true or REMOTE_CONTAINERS=true environment variable. Skipping! =="
   exit
 fi
 

@@ -14,16 +14,16 @@ Similar to the core [common](https://github.com/microsoft/vscode-dev-containers/
 FROM public.ecr.aws/sam/build-nodejs16.x
 # Codespaces development container.
 ENV PATH /usr/sbin:$PATH
-ARG DEVCONTAINER_BUILD=false
-ENV DEVCONTAINER_BUILD=$DEVCONTAINER_BUILD
+ARG REMOTE_CONTAINERS=false
+ENV REMOTE_CONTAINERS=$REMOTE_CONTAINERS
 RUN curl -s https://raw.githubusercontent.com/customink/codespaces-features/main/common-amzn.sh | bash /dev/stdin 1> /dev/null
 ```
 
-The usage of the `DEVCONTAINER_BUILD` arg and environment variable is required for the `common-amzn.sh` script to run. Your normal CI/CD should not set this build arg and when not present, the script will do nothing and save both time and development only complexities leaking into your build process. Add this to your `.devcontainer.json` file.
+The usage of the `REMOTE_CONTAINERS` arg and environment variable is required for the `common-amzn.sh` script to run. Your normal CI/CD should not set this build arg and when not present, the script will do nothing and save both time and development only complexities leaking into your build process. Add this to your `.devcontainer.json` file.
 
 ```json
 "build": {
-  "args": {"DEVCONTAINER_BUILD": "true"}
+  "args": {"REMOTE_CONTAINERS": "true"}
 }
 ```
 
