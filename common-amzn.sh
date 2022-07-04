@@ -13,15 +13,6 @@
 
 set -e
 
-INSTALL=false
-if [ "$CODESPACES" = "true" ] || [ "$REMOTE_CONTAINERS" = "true" ]; then
-  INSTALL=true
-fi
-if [ "$INSTALL" != "true" ]; then
-  echo "== [Custom Ink] missing CODESPACES=true or REMOTE_CONTAINERS=true environment variable. Skipping! =="
-  exit
-fi
-
 echo "== [Custom Ink] installing 'common-amzn' features ... =="
 
 INSTALL_ZSH=${1:-"true"}

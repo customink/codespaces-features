@@ -4,7 +4,6 @@ set -e
 
 echo "== Running common-amzn.sh =="
 
-export REMOTE_CONTAINERS=true
 ./common-amzn.sh > /dev/null 2>&1
 
 echo "== Testing common-amzn =="
