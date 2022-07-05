@@ -1,0 +1,16 @@
+#!/bin/bash
+set -e
+. ./bin/assert.sh
+
+echo "== Running docker-in-docker-amzn.sh =="
+
+./docker-in-docker-amzn.sh > /dev/null 2>&1
+
+echo "== Testing docker-in-docker-amzn =="
+
+assert "docker --version | cut -d \" \" -f 1-2" \
+       "Docker version"
+
+echo "== Testing complete! =="
+
+assert_end examples
