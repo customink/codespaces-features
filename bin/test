@@ -1,10 +1,10 @@
 #!/bin/sh
 set -e
 
-# echo "== Test 'common-amzn' on 'public.ecr.aws/sam/build-nodejs16.x' ... =="
-# ./bin/test-image \
-#   common-amzn \
-#   public.ecr.aws/sam/build-nodejs16.x
+echo "== Test 'common-amzn' on 'public.ecr.aws/sam/build-nodejs16.x' ... =="
+./bin/test-image \
+  common-amzn \
+  public.ecr.aws/sam/build-nodejs16.x
 
 echo "== Test 'docker-in-docker-amzn' on 'public.ecr.aws/sam/build-nodejs16.x' ... =="
 ./bin/test-image \

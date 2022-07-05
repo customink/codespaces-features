@@ -13,7 +13,7 @@ Similar to the core [common](https://github.com/microsoft/vscode-dev-containers/
 ```dockerfile
 FROM public.ecr.aws/sam/build-nodejs16.x
 # Codespaces development container.
-ENV PATH /usr/sbin:$PATH
+ENV PATH="/usr/sbin:${PATH}"
 RUN curl -s https://raw.githubusercontent.com/customink/codespaces-features/main/common-amzn.sh | bash /dev/stdin 1> /dev/null
 ```
 

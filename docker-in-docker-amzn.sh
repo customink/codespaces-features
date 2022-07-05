@@ -67,7 +67,12 @@ else
       yum install -y docker
 fi
 
-echo "== [Custom Ink] "Finished installing docker!" =="
+if type /usr/sbin/iptables-legacy > /dev/null 2>&1; then
+    /usr/sbin/update-alternatives --set iptables /usr/sbin/iptables-legacy
+    /usr/sbin/update-alternatives --set ip6tables /usr/sbin/ip6tables-legacy || true
+fi
+
+echo "== [Custom Ink] Finished installing docker! =="
 
 # If init file already exists, exit
 if [ -f "/usr/local/share/docker-init.sh" ]; then
