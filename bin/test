@@ -1,12 +1,26 @@
 #!/bin/sh
 set -e
 
-echo "== Test 'common-amzn' on 'public.ecr.aws/sam/build-nodejs16.x' ... =="
-./bin/test-image \
-  common-amzn \
-  public.ecr.aws/sam/build-nodejs16.x
+# x86_64
 
-echo "== Test 'docker-in-docker-amzn' on 'public.ecr.aws/sam/build-nodejs16.x' ... =="
+# echo "== Test 'common-amzn' on 'public.ecr.aws/sam/build-nodejs16.x' ... =="
+# ./bin/test-image \
+#   common-amzn \
+#   public.ecr.aws/sam/build-nodejs16.x
+
+# echo "== Test 'common-amzn' on 'public.ecr.aws/sam/build-nodejs16.x' ... =="
+# ./bin/test-image \
+#   common-amzn \
+#   public.ecr.aws/sam/build-nodejs16.x
+
+# arm64
+
+echo "== Test 'docker-in-docker-amzn' on 'public.ecr.aws/sam/build-nodejs16.x:latest-arm64' ... =="
 ./bin/test-image \
   docker-in-docker-amzn \
-  public.ecr.aws/sam/build-nodejs16.x
+  public.ecr.aws/sam/build-nodejs16.x:latest-arm64
+
+echo "== Test 'docker-in-docker-amzn' on 'public.ecr.aws/sam/build-nodejs16.x:latest-arm64' ... =="
+./bin/test-image \
+  docker-in-docker-amzn \
+  public.ecr.aws/sam/build-nodejs16.x:latest-arm64

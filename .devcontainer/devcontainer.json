@@ -1,0 +1,6 @@
+{
+  "dockerFile": "Dockerfile",
+  "features": {
+    "docker-in-docker": "latest"
+  }
+}
