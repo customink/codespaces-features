@@ -14,7 +14,6 @@
 set -e
 
 echo "== [Custom Ink] installing 'common-amzn' features ... =="
-echo "== [Custom Ink] PLEASE UPDATE TO THE LATEST INTERFACE. SEE HERE: https://github.com/customink/codespaces-features =="
 
 INSTALL_ZSH=${1:-"true"}
 USERNAME=${2:-"automatic"}

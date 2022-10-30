@@ -4,7 +4,7 @@ set -e
 
 echo "== Running common-amzn.sh =="
 
-./common-amzn.sh > /dev/null 2>&1
+./src/common-amzn/install.sh > /dev/null 2>&1
 
 echo "== Testing common-amzn =="
 

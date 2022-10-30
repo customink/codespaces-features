@@ -15,7 +15,6 @@
 set -e
 
 echo "== [Custom Ink] installing 'docker-in-docker-amzn' features ... =="
-echo "== [Custom Ink] PLEASE UPDATE TO THE LATEST INTERFACE. SEE HERE: https://github.com/customink/codespaces-features =="
 
 ENABLE_NONROOT_DOCKER=${1:-"true"}
 USERNAME=${2:-"automatic"}
