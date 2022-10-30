@@ -1,5 +1,6 @@
 {
-  "name": "common-amzn",
+  "id": "common-amzn",
+  "name": "Common Amazon Linux 2 Utilities",
   "version": "1.0.0",
-  "description": "Common Amazon Linux 2 Utilities"
+  "description": "Like [Common Debian Utilities (common-utils)](https://github.com/devcontainers/features/tree/main/src/common-utils) but for Amazon Linux 2."
 }
