@@ -2,5 +2,24 @@
   "id": "docker-in-docker-amzn",
   "name": "Docker-in-Docker Amazon Linux 2",
   "version": "1.0.0",
-  "description": "Like [Docker-in-Docker (docker-in-docker](https://github.com/devcontainers/features/tree/main/src/docker-in-docker) but for Amazon Linux 2."
+  "description": "Like [Docker-in-Docker (docker-in-docker](https://github.com/devcontainers/features/tree/main/src/docker-in-docker) but for Amazon Linux 2.",
+  "documentationURL": "https://github.com/customink/codespaces-features/tree/main/src/docker-in-docker-amzn",
+  "entrypoint": "/usr/local/share/docker-init.sh",
+  "privileged": true,
+  "customizations": {
+    "vscode": {
+      "extensions": ["ms-azuretools.vscode-docker"]
+    }
+  },
+  "containerEnv": {
+    "PATH": "/usr/sbin:${PATH}"
+  },
+  "mounts": [
+    {
+      "source": "dind-var-lib-docker",
+      "target": "/var/lib/docker",
+      "type": "volume"
+    }
+  ],
+  "installsAfter": ["ghcr.io/customink/codespaces-features/common-amzn"]
 }

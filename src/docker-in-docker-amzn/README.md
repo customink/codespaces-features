@@ -8,18 +8,7 @@ Like [Docker-in-Docker (docker-in-docker](https://github.com/devcontainers/featu
 ```json
 "features": {
   "ghcr.io/customink/codespaces-features/docker-in-docker-amzn:latest": {}
-},
-"runArgs": ["--init", "--privileged"],
-"overrideCommand": false
-```
-
-Add to your dev/build `Dockerfile`.
-
-```dockerfile
-ENV PATH="/usr/sbin:${PATH}"
-ENTRYPOINT [ "/usr/local/share/docker-init.sh" ]
-CMD [ "sleep", "infinity" ]
-VOLUME [ "/var/lib/docker" ]
+}
 ```
 
 ## Options
