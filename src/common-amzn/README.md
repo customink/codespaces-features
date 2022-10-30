@@ -14,10 +14,6 @@ Like [Common Debian Utilities (common-utils)](https://github.com/devcontainers/f
 
 Add to your dev/build `Dockerfile`.
 
-```dockerfile
-ENV PATH="/usr/sbin:${PATH}"
-```
-
 ## Options
 
 None at this time.
