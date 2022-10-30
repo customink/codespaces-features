@@ -1,0 +1,5 @@
+{
+  "name": "docker-in-docker-amzn",
+  "version": "1.0.0",
+  "description": "Docker-in-Docker Amazon Linux 2"
+}
