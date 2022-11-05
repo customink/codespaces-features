@@ -7,7 +7,7 @@ Like [Docker-in-Docker (docker-in-docker](https://github.com/devcontainers/featu
 
 ```json
 "features": {
-  "ghcr.io/customink/codespaces-features/docker-in-docker-amzn:latest": {}
+  "ghcr.io/customink/codespaces-features/docker-in-docker-amzn": {}
 }
 ```
 

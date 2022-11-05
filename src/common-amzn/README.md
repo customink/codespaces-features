@@ -8,7 +8,7 @@ Like [Common Debian Utilities (common-utils)](https://github.com/devcontainers/f
 
 ```json
 "features": {
-  "ghcr.io/customink/codespaces-features/common-amzn:latest": {}
+  "ghcr.io/customink/codespaces-features/common-amzn": {}
 }
 ```
 
