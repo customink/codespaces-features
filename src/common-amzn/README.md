@@ -12,8 +12,6 @@ Like [Common Debian Utilities (common-utils)](https://github.com/devcontainers/f
 }
 ```
 
-Add to your dev/build `Dockerfile`.
-
 ## Options
 
 None at this time.
