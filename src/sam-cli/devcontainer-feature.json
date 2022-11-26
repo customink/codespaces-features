@@ -1,0 +1,15 @@
+{
+  "id": "sam-cli",
+  "name": "AWS SAM CLI Utility",
+  "version": "1.0.0",
+  "description": "The AWS Serverless Application Model (AWS SAM) is an open-source framework that you can use to build serverless applications on AWS.",
+  "documentationURL": "https://github.com/customink/codespaces-features/tree/main/src/sam-cli",
+  "options": {
+    "version": {
+      "type": "string",
+      "proposals": ["latest", "1.65.0"],
+      "default": "latest",
+      "description": "Select or enter a SAM CLI version number."
+    }
+  }
+}
