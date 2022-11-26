@@ -10,3 +10,8 @@ echo "== Test 'docker-in-docker-amzn' on 'public.ecr.aws/sam/build-nodejs16.x' .
 ./bin/test-image \
   docker-in-docker-amzn \
   public.ecr.aws/sam/build-nodejs16.x
+
+echo "== Test 'sam-cli' on 'ruby:3.1-bullseye' ... =="
+./bin/test-image \
+  sam-cli \
+  ruby:3.1-bullseye

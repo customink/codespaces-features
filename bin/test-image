@@ -7,5 +7,5 @@ docker run \
   --rm \
   --init \
   --privileged \
-  --entrypoint "test/${1}" \
+  --entrypoint "src/${1}/install.sh" \
   "${2}"

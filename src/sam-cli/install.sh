@@ -13,9 +13,9 @@ fi
 
 sudoIf() {
   if [ "$(id -u)" != 0 ]; then
-    sudo "\$@"
+    sudo "$@"
   else
-    "\$@"
+    "$@"
   fi
 }
 
