@@ -1,0 +1,15 @@
+{
+  "id": "docker-log-level",
+  "name": "Set Docker Log Level",
+  "version": "1.0.0",
+  "description": "Creates a daemon.json with log-level",
+  "documentationURL": "https://github.com/customink/codespaces-features/tree/main/src/docker-log-level",
+  "options": {
+    "level": {
+      "type": "string",
+      "description": "Select the Docker log-level.",
+      "enum": ["debug", "info", "warn", "error", "fatal"],
+      "default": "warn"      
+    }
+  }
+}
