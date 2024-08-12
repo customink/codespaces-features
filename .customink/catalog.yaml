@@ -8,3 +8,4 @@ properties:
   public_facing: false
   pci: false
   pii: false
+tier: tier_na # this repo does not have a tier. typically libraries
