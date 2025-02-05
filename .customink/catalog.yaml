@@ -1,7 +1,7 @@
 name: codespaces-features
 owner: metaskills
 purpose:
-  - other
+  - script
 deployment_type:
   - package
 properties:
